@@ -1,6 +1,6 @@
 echo "TECHIO> open --port 8080"
 cd /mooc/in
-sh start.sh
+sh start.sh &
 cd /project
 mvn -q compile
 curl localhost:8080
