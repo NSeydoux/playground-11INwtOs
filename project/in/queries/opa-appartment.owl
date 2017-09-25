@@ -1,0 +1,357 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/laas-iot/adream-appartment/sosa#"
+     xml:base="https://w3id.org/laas-iot/adream-appartment/sosa"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:san="http://www.irit.fr/recherches/MELODI/ontologies/SAN#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:dogont="http://elite.polito.it/ontologies/dogont.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:voaf="http://purl.org/vocommons/voaf#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ssn="http://www.w3.org/ns/ssn#"
+     xmlns:sosa="http://www.w3.org/ns/sosa#"
+     xmlns:ioto="http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:adream="https://w3id.org/laas-iot/adream/sosa#"
+     xmlns:appt="https://w3id.org/laas-iot/adream-appartment/sosa#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa">
+        <owl:imports rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/IoT-O/sosa"/>
+        <owl:imports rdf:resource="https://w3id.org/laas-iot/adream/sosa"/>
+        <vann:preferredNamespaceURI>https://w3id.org/laas-iot/adream-appartment</vann:preferredNamespaceURI>
+        <terms:issued>2017-05-30</terms:issued>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <dc:publisher>LAAS-CNRS (https://www.laas.fr)</dc:publisher>
+        <dc:creator rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/contributors#hernandez"/>
+        <voaf:specializes rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/IoT-O"/>
+        <dc:creator>Nicolas Seydoux, Khalil Drira, Christelle Ecrepont, Nathalie Hernandez, Thierry Monteil</dc:creator>
+        <dc:creator rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/contributors#drira"/>
+        <dc:creator rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/contributors#ecrepont"/>
+        <vann:preferredNamespacePrefix>appt</vann:preferredNamespacePrefix>
+        <dc:publisher>IRIT (https://www.irit.fr/)</dc:publisher>
+        <rdfs:comment xml:lang="en">This knowledge base describes the appartment in the ADREAM building, with a particular focus on the connected devices it contains. It is an implementation of the OPA vocabulary (https://w3id.org/laas-iot/adream).</rdfs:comment>
+        <dc:title>ADREAM appartment KB</dc:title>
+        <dc:creator rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/contributors#monteil"/>
+        <owl:versionInfo>1.3.4</owl:versionInfo>
+        <dc:creator rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/contributors#seydoux"/>
+    </owl:Ontology>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- appt:AEON_LMP -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#AEON_LMP">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#AeonLamp"/>
+        <ioto:hasId>AEON_LED_BULB</ioto:hasId>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+        <sosa:actsOnProperty rdf:resource="https://w3id.org/laas-iot/adream/sosa#LivingRoomLuminosity"/>
+        <rdfs:label>Z-Wave lamp</rdfs:label>
+        <rdfs:label>Zw_AEON_LED_BULB_3557302802-8</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#Appartment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- appt:FIB_PLUG -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#FIB_PLUG">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#FibaroPlug"/>
+        <ioto:hasId>Zw_FIBARO_WALL_PLUG_3557302802-4</ioto:hasId>
+        <rdfs:label>Fibaro plug</rdfs:label>
+        <rdfs:label>Zw_FIBARO_WALL_PLUG_3557302802-4</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- appt:PHG_FAN_11 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#PHG_FAN_11">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#PhidgetFan"/>
+        <ioto:hasId>PHG_FAN_11</ioto:hasId>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+        <sosa:actsOnProperty rdf:resource="https://w3id.org/laas-iot/adream/sosa#LivingRoomTemperature"/>
+        <rdfs:label>PHG_FAN_11</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- appt:PHG_HUM_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#PHG_HUM_01">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#PhidgetHumiditySensor"/>
+        <ioto:hasId>PHG_HUM_01</ioto:hasId>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+        <ssn:observes rdf:resource="https://w3id.org/laas-iot/adream/sosa#LivingRoomHygrometry"/>
+        <rdfs:label>PHG_HUM_01</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- appt:PHG_LMP_10 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#PHG_LMP_10">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#PhidgetLamp"/>
+        <ioto:hasId>PHG_LMP_10</ioto:hasId>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+        <sosa:actsOnProperty rdf:resource="https://w3id.org/laas-iot/adream/sosa#LivingRoomLuminosity"/>
+        <rdfs:label>PHG_LMP_10</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- appt:PHG_LUM_02 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#PHG_LUM_02">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#PhidgetLuminositySensor"/>
+        <ioto:hasId>PHG_LUM_02</ioto:hasId>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+        <ssn:observes rdf:resource="https://w3id.org/laas-iot/adream/sosa#LivingRoomLuminosity"/>
+        <rdfs:label>PHG_LUM_02</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- appt:PHG_PRS_04 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#PHG_PRS_04">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#PhidgetPresenceSensor"/>
+        <ioto:hasId>PHG_LUM_02</ioto:hasId>
+        <rdfs:label>PHG_LUM_02</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- appt:PHG_TMP_00 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#PHG_TMP_00">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#PhidgetTemperatureSensor"/>
+        <ioto:hasId>PHG_TMP_00</ioto:hasId>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+        <ssn:observes rdf:resource="https://w3id.org/laas-iot/adream/sosa#LivingRoomTemperature"/>
+        <rdfs:label>PHG_TMP_00</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- appt:PHG_TMP_05 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#PHG_TMP_05">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#PhidgetTemperatureSensor"/>
+        <ioto:hasId>PHG_TMP_05</ioto:hasId>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+        <ssn:observes rdf:resource="https://w3id.org/laas-iot/adream/sosa#LivingRoomTemperature"/>
+        <rdfs:label>PHG_TMP_05</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- appt:PHG_TMP_06 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#PHG_TMP_06">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#PhidgetTemperatureSensor"/>
+        <ioto:hasId>PHG_TMP_06</ioto:hasId>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+        <ssn:observes rdf:resource="https://w3id.org/laas-iot/adream/sosa#LivingRoomTemperature"/>
+        <rdfs:label>PHG_TMP_06</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- appt:PHG_WGH_03 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#PHG_WGH_03">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#PhidgetWeightSensor"/>
+        <ioto:hasId>PHG_WGH_03</ioto:hasId>
+        <rdfs:label>PHG_WGH_03</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- appt:PHL_LMP_01 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#PHL_LMP_01">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#PhillipsHue"/>
+        <ioto:hasId>PHL_LMP_01</ioto:hasId>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+        <sosa:actsOnProperty rdf:resource="https://w3id.org/laas-iot/adream/sosa#LivingRoomLuminosity"/>
+        <rdfs:label>PHL_LMP_01</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- appt:PHL_LMP_02 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#PHL_LMP_02">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#PhillipsHue"/>
+        <ioto:hasId>PHL_LMP_02</ioto:hasId>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentBedroom"/>
+        <sosa:actsOnProperty rdf:resource="https://w3id.org/laas-iot/adream/sosa#BedroomLuminosity"/>
+        <rdfs:label>PHL_LMP_02</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentBedroom"/>
+    </owl:NamedIndividual>
+    
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_Eyeball01">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#FibaroSphere"/>
+        <ioto:hasId>Zw_FIBARO_MOTION_SENSOR_3557302802-2</ioto:hasId>
+        <ssn:hasSubSystem rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_LuminositySensor01"/>
+        <ssn:hasSubSystem rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_MotionSensor01"/>
+        <ssn:hasSubSystem rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_TemperatureSensor01"/>
+        <rdfs:label>Fibaro eyeball 01</rdfs:label>
+        <rdfs:comment>Fibaro eyeball situated in the living room, sensor aggregating luminosity, temperature and motion observations.</rdfs:comment>
+        <rdfs:label>Zw_FIBARO_MOTION_SENSOR_3557302802-2</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_LuminositySensor01">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#LuminositySensor"/>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+        <ssn:observes rdf:resource="https://w3id.org/laas-iot/adream/sosa#LivingRoomLuminosity"/>
+        <rdfs:label>Fibaro luminosity sensor</rdfs:label>
+        <rdfs:label>ILLUMINANCE</rdfs:label>
+        <rdfs:comment>Luminosity sensor associated to the Fibaro eyball number one, accessible through the ILLUMINANCE container</rdfs:comment>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_MotionSensor01">
+        <rdf:type rdf:resource="http://elite.polito.it/ontologies/dogont.owl#PresenceAndMovementSensor"/>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+        <ssn:observes rdf:resource="https://w3id.org/laas-iot/adream/sosa#LivingRoomPresence"/>
+        <rdfs:label>Fibaro motion sensor</rdfs:label>
+        <rdfs:label>MOTION</rdfs:label>
+        <rdfs:comment>Motion sensor associated to the Fibaro eyball number one, accessible through the MOTION container</rdfs:comment>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_TemperatureSensor01">
+        <rdf:type rdf:resource="http://elite.polito.it/ontologies/dogont.owl#SingleTemperatureSensor"/>
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAMTemperatureSensor"/>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+        <ssn:observes rdf:resource="https://w3id.org/laas-iot/adream/sosa#LivingRoomTemperature"/>
+        <rdfs:label>Fibaro temperature sensor</rdfs:label>
+        <rdfs:label>TEMPERATURE</rdfs:label>
+        <rdfs:comment>Temperature sensor associated to the Fibaro eyball number one, accessible through the TEMPERATURE container</rdfs:comment>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_Eyeball02">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#FibaroSphere"/>
+        <ioto:hasId>Zw_FIBARO_MOTION_SENSOR_3557302802-3</ioto:hasId>
+        <ssn:hasSubSystem rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_LuminositySensor02"/>
+        <ssn:hasSubSystem rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_MotionSensor02"/>
+        <ssn:hasSubSystem rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_TemperatureSensor02"/>
+        <rdfs:label>Fibaro eyeball 02</rdfs:label>
+        <rdfs:comment>Fibaro eyeball situated in the bedroom, sensor aggregating luminosity, temperature and motion observations.</rdfs:comment>
+        <rdfs:label>Zw_FIBARO_MOTION_SENSOR_3557302802-3</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentBedroom"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_LuminositySensor02">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#LuminositySensor"/>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentBedroom"/>
+        <ssn:observes rdf:resource="https://w3id.org/laas-iot/adream/sosa#BedroomLuminosity"/>
+        <rdfs:label>Fibaro luminosity sensor</rdfs:label>
+        <rdfs:label>ILLUMINANCE</rdfs:label>
+        <rdfs:comment>Luminosity sensor associated to the Fibaro eyball number two, accessible through the ILLUMINANCE container</rdfs:comment>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentBedroom"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_MotionSensor02">
+        <rdf:type rdf:resource="http://elite.polito.it/ontologies/dogont.owl#PresenceAndMovementSensor"/>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentBedroom"/>
+        <ssn:observes rdf:resource="https://w3id.org/laas-iot/adream/sosa#BedroomPresence"/>
+        <rdfs:label>Fibaro motion sensor</rdfs:label>
+        <rdfs:label>MOTION</rdfs:label>
+        <rdfs:comment>Motion sensor associated to the Fibaro eyball number two, accessible through the MOTION container</rdfs:comment>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentBedroom"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#ZW_TemperatureSensor02">
+        <rdf:type rdf:resource="http://elite.polito.it/ontologies/dogont.owl#SingleTemperatureSensor"/>
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAMTemperatureSensor"/>
+        <ssn:hasFeatureOfInterest rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentBedroom"/>
+        <ssn:observes rdf:resource="https://w3id.org/laas-iot/adream/sosa#BedroomTemperature"/>
+        <rdfs:label>Fibaro temperature sensor</rdfs:label>
+        <rdfs:label>TEMPERATURE</rdfs:label>
+        <rdfs:comment>Temperature sensor associated to the Fibaro eyball number two, accessible through the TEMPERATURE container</rdfs:comment>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentBedroom"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream-appartment/sosa#enOSwitch">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream/sosa#EnOceanWallSwitch"/>
+        <ioto:hasId>EnO_RockerSwitchWallSwitch_2738389</ioto:hasId>
+        <rdfs:label>EnOcean wall switch</rdfs:label>
+        <rdfs:label>RockerSwitchWallSwitch</rdfs:label>
+        <adream:locatedInBuilding rdf:resource="https://w3id.org/laas-iot/adream/sosa#ADREAM"/>
+        <adream:locatedInRoom rdf:resource="https://w3id.org/laas-iot/adream/sosa#AppartmentLivingRoom"/>
+    </owl:NamedIndividual>
+
+    <!-- Extension of opa-common -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream/sosa#LivingRoomLuminosity">
+        <sosa:isActedOnBy rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#AEON_LMP"/>
+        <sosa:isActedOnBy rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#PHG_LMP_10"/>
+        <sosa:isActedOnBy rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#PHL_LMP_01"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream/sosa#BedroomLuminosity">
+        <sosa:isActedOnBy rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#PHL_LMP_02"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream/sosa#LivingRoomTemperature">
+        <sosa:isActedOnBy rdf:resource="https://w3id.org/laas-iot/adream-appartment/sosa#PHG_FAN_11"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+

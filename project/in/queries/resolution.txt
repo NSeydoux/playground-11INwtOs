@@ -1,0 +1,6 @@
+dogont.owl http://elite.polito.it/ontologies/dogont.owl
+IoT-O.owl https://www.irit.fr/recherches/MELODI/ontologies/IoT-O
+m3-lite.owl http://purl.org/iot/vocab/m3-lite
+opa-appartment.owl https://w3id.org/laas-iot/adream-appartment
+opa-common.owl https://w3id.org/laas-iot/adream
+SSN.owl http://purl.oclc.org/NET/ssnx/ssn

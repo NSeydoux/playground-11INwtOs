@@ -1,0 +1,1055 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/laas-iot/adream#"
+     xml:base="https://w3id.org/laas-iot/adream"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:san="http://www.irit.fr/recherches/MELODI/ontologies/SAN#"
+     xmlns:opa="https://w3id.org/laas-iot/adream#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:dogont="http://elite.polito.it/ontologies/dogont.owl#"
+     xmlns:IoT-O="https://www.irit.fr/recherches/MELODI/ontologies/IoT-O#"
+     xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:voaf="http://purl.org/vocommons/voaf#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="https://w3id.org/laas-iot/adream">
+        <owl:imports rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/IoT-O"/>
+        <rdfs:comment xml:lang="en">This knowledge base describes the ADREAM building, with a particular focus on the connected devices. It is an extension of IoT-O (https://www.irit.fr/recherches/MELODI/ontologies/IoT-O), an core domain IoT ontology.
+
+ADREAM is a positive-energy building, built for research purposes in Toulouse at LAAS-CNRS. It hosts over 6500 sensors scattered all over its surface to monitor not only energy consumption, but also luminosity or temperature, allowing autonomic control of the building.</rdfs:comment>
+        <vann:preferredNamespaceURI>https://w3id.org/laas-iot/adream</vann:preferredNamespaceURI>
+        <dc:title>OPA ontology</dc:title>
+        <terms:modified>2017-05-03</terms:modified>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <dc:creator rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/contributors#hernandez"/>
+        <dc:publisher>LAAS-CNRS (https://www.laas.fr)</dc:publisher>
+        <voaf:specializes rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/IoT-O"/>
+        <terms:issued>2016-02-10</terms:issued>
+        <dc:creator>Nicolas Seydoux, Khalil Drira, Christelle Ecrepont, Nathalie Hernandez, Thierry Monteil</dc:creator>
+        <dc:creator rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/contributors#drira"/>
+        <dc:creator rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/contributors#ecrepont"/>
+        <vann:preferredNamespacePrefix>opa</vann:preferredNamespacePrefix>
+        <dc:publisher>IRIT (https://www.irit.fr/)</dc:publisher>
+        <versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.3.4</versionInfo>
+        <dc:creator rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/contributors#monteil"/>
+        <dc:creator rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/contributors#seydoux"/>
+    </owl:Ontology>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->    
+
+
+    <!-- https://w3id.org/laas-iot/adream#belongsToADREAMSubsystem -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/laas-iot/adream#belongsToADREAMSubsystem">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isComponentOf"/>
+        <rdfs:domain rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/IoT-O#IoT_Thing"/>
+        <rdfs:range rdf:resource="https://w3id.org/laas-iot/adream#ADREAMSubSystem"/>
+        <rdfs:label>belongs to ADREAM subsystem</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#can_be_accessed_from -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/laas-iot/adream#can_be_accessed_from">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:comment xml:lang="en">Marks the relationship between two places, when one can be accessed from the other. In the majority of cases, the relationship is symmetric.</rdfs:comment>
+        <rdfs:label xml:lang="en">can be accessed from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#hasMeasurementUnit -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/laas-iot/adream#hasMeasurementUnit">
+        <rdfs:label xml:lang="en">has measurement unit</rdfs:label>
+        <rdfs:comment xml:lang="en">Specifies a kind of capability a sensor can have, namely the unit in which it expresses its observations.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementCapability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#hasIndoorLocation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/laas-iot/adream#hasIndoorLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation"/>
+        <rdfs:range rdf:resource="http://elite.polito.it/ontologies/dogont.owl#BuildingEnvironment"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+            <rdf:Description rdf:about="https://w3id.org/laas-iot/adream#hasIndoorLocation"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label xml:lang="en">has indoor location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#locatedInBuilding -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/laas-iot/adream#locatedInBuilding">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#hasIndoorLocation"/>
+        <rdfs:range rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Building"/>
+        <rdfs:label xml:lang="en">located in building</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#locatedInRoom -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/laas-iot/adream#locatedInRoom">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#hasIndoorLocation"/>
+        <rdfs:range rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Room"/>
+        <rdfs:label xml:lang="en">located in room</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#locatedOnFloor -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/laas-iot/adream#locatedOnFloor">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#hasIndoorLocation"/>
+        <rdfs:range rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Floor"/>
+        <rdfs:comment xml:lang="en">Relationship between an entity and the building floor where it can be found</rdfs:comment>
+        <rdfs:label xml:lang="en">located on floor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#hasLocationName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/laas-iot/adream#hasLocationName">
+        <rdfs:domain rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/IoT-O#IoT_Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Name of the location of a thing</rdfs:comment>
+        <rdfs:label>has location name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMDevice -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#ADREAMDevice">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/laas-iot/adream#ADREAMSubSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Device part of the ADREAM building.</rdfs:comment>
+        <rdfs:label>ADREAM device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMLightSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#ADREAMLightSensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMSensor"/>
+        <rdfs:label>ADREAM light sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMPowerConsumptionSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#ADREAMPowerConsumptionSensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMPowerSensor"/>
+        <rdfs:comment>A sensor measuring the energy consumption of an appliance.</rdfs:comment>
+        <rdfs:label>ADREAM power consumption sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMPowerCreationSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#ADREAMPowerCreationSensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMPowerSensor"/>
+        <rdfs:comment>A sensor that measure the power generated by a generator (e.g. solar panel)</rdfs:comment>
+        <rdfs:label>ADREAM power creation sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMPowerSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#ADREAMPowerSensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMSensor"/>
+        <rdfs:comment>A sensor that measures an energy flow (consumption or generation)</rdfs:comment>
+        <rdfs:label>ADREAM power sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMPresenceSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#ADREAMPresenceSensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMSensor"/>
+        <rdfs:comment>These sensor indicate if a person is present within their range.</rdfs:comment>
+        <rdfs:label>ADREAM presence sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#ADREAMSensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMDevice"/>
+        <rdfs:comment>A sensor inside the ADREAM building. Each sensor is relevant to one of the ADREAM subsystems : energy, light, temperature or power.</rdfs:comment>
+        <rdfs:label>ADREAM sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMSubSystem -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#ADREAMSubSystem">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#System"/>
+        <rdfs:comment>The ADREAM devices architecture is separated into 4 main components : energy, light, temperature and photovoltaic. These domain characterize the usage of the devices, and not its nature : energy measurement sensors are present in the energy, the light and the photovoltaic systems.</rdfs:comment>
+        <rdfs:label>ADREAM subsystem</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMTemperatureSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#ADREAMTemperatureSensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMSensor"/>
+        <rdfs:label>ADREAM temperature sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#AeonLamp -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#AeonLamp">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#DimmableLight"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMDevice"/>
+        <rdfs:label xml:lang="en">Aeon lamp</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#AirProcessingUnit -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#AirProcessingUnit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMDevice"/>
+        <rdfs:label xml:lang="en">Device processing the air in a room in order to make it clean, and controlled in term of temperature and humidity.</rdfs:label>
+        <rdfs:comment xml:lang="fr">Sensor measuring wind speed</rdfs:comment>
+    </owl:Class>
+
+
+    <!-- https://w3id.org/laas-iot/adream#Anemometer -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Anemometer">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#WeatherSensor"/>
+        <rdfs:comment xml:lang="fr">Sensor measuring wind speed</rdfs:comment>
+        <rdfs:label xml:lang="en">Anemometer</rdfs:label>
+        <rdfs:label xml:lang="fr">Anémomètre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#AthmosphericPressure -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#AthmosphericPressure">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+        <rdfs:label xml:lang="en">Athmospheric pressure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Barometer -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Barometer">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#WeatherSensor"/>
+        <rdfs:comment xml:lang="fr">Sensor measuring athmospheric pressure</rdfs:comment>
+        <rdfs:label xml:lang="en">Barometer</rdfs:label>
+        <rdfs:label xml:lang="fr">Baromètre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Cold_water_valve -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Cold_water_valve">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#Valve"/>
+        <rdfs:label xml:lang="en">Cold water valve</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#DataQuality -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#DataQuality">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+        <rdfs:comment>Data quality is a measure of reliability of the data.</rdfs:comment>
+        <rdfs:label>Data quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#DiscreteControl -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#DiscreteControl">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Control"/>
+        <rdfs:description xml:lang="en">Controler allowing to select a command from a set of predefined values</rdfs:description>
+        <rdfs:label xml:lang="en">Discrete control</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#EnOceanWallSwitch -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#EnOceanWallSwitch">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#RockerSwitch"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMDevice"/>
+        <rdfs:label xml:lang="en">EnOcean wall switch</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Fan_coil -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Fan_coil">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Ventilator"/>
+        <rdfs:comment xml:lang="en">Ventilator equipped with two valves allowing to control intake of hot and cold water.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fan coil</rdfs:label>
+        <rdfs:label xml:lang="fr">Ventilo convecteur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Fan_speed_control -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Fan_speed_control">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#DiscreteControl"/>
+        <rdfs:label xml:lang="en">Fan speed control</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#FibaroPlug -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#FibaroPlug">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMDevice"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#Plug"/>
+        <rdfs:label xml:lang="en">Fibaro plug</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#FibaroSphere -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#FibaroSphere">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#System"/>
+        <rdfs:label xml:lang="en">Fibaro sphere</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Hot_water_valve -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Hot_water_valve">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#Valve"/>
+        <rdfs:label xml:lang="en">Hot water valve</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Hygrometer -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Hygrometer">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#WeatherSensor"/>
+        <rdfs:label xml:lang="en">Hygrometer</rdfs:label>
+        <rdfs:label xml:lang="fr">Hygromètre</rdfs:label>
+        <rdfs:label xml:lang="en">Sensor measuring humidity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Hygrometry -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Hygrometry">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#IndoorElement -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#IndoorElement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest"/>
+        <rdfs:label xml:lang="en">Indoor element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Inverter -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Inverter">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#ElectricalSystem"/>
+        <rdfs:comment xml:lang="en">Device converting a direct current into alternative.</rdfs:comment>
+        <rdfs:label xml:lang="en">Inverter</rdfs:label>
+        <rdfs:label xml:lang="fr">Onduleur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Inverter_string -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Inverter_string">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#ElectricalSystem"/>
+        <rdfs:comment xml:lang="en">Subpart of an inverter</rdfs:comment>
+        <rdfs:label xml:lang="en">Inverter string</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Luminosity -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Luminosity">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#LuminositySensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#LuminositySensor">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Sensor"/>
+        <rdfs:comment xml:lang="en">Sensor measuring luminosity</rdfs:comment>
+        <rdfs:label xml:lang="en">Luminosity sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#MeasurementUnit -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#MeasurementUnit">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty"/>
+        <rdfs:comment>Unit of measurement for a sensor</rdfs:comment>
+        <rdfs:label>Measurement Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#NamedIndividual -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#NamedIndividual"/>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#OutdoorElement -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#OutdoorElement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest"/>
+        <rdfs:label xml:lang="en">Outdoor element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#OutsideTemperatureSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#OutsideTemperatureSensor">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#SingleTemperatureSensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#WeatherSensor"/>
+        <rdfs:label xml:lang="fr">Capteur de température extérieure</rdfs:label>
+        <rdfs:label xml:lang="en">Outside temperature sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#PhidgetFan -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#PhidgetFan">
+        <rdfs:subClassOf rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/SAN#Actuator"/>
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Fan"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMDevice"/>
+        <rdfs:label xml:lang="en">Phidget fan</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#PhidgetHumiditySensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#PhidgetHumiditySensor">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#HumiditySensor"/>
+        <rdfs:label xml:lang="en">Phidget humidity sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#PhidgetLamp -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#PhidgetLamp">
+        <rdfs:subClassOf rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/SAN#Actuator"/>
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#SimpleLamp"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMDevice"/>
+        <rdfs:label xml:lang="en">Phidget lamp</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#VirtualLamp">
+        <rdfs:subClassOf rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/SAN#Actuator"/>
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#SimpleLamp"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMDevice"/>
+        <rdfs:label xml:lang="en">Virtual lamp</rdfs:label>
+    </owl:Class>
+
+    <!-- https://w3id.org/laas-iot/adream#PhidgetLuminositySensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#PhidgetLuminositySensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMDevice"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#LuminositySensor"/>
+        <rdfs:label xml:lang="en">Phidget luminosity sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#PhidgetPresenceSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#PhidgetPresenceSensor">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#PresenceSensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMDevice"/>
+        <rdfs:label xml:lang="en">Phidget presence sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#PhidgetTemperatureSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#PhidgetTemperatureSensor">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#SingleTemperatureSensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMDevice"/>
+        <rdfs:label xml:lang="en">Phidget temperature sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#PhidgetWeightSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#PhidgetWeightSensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#WeightSensor"/>
+        <rdfs:label xml:lang="en">Phidget weight sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#PhillipsHue -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#PhillipsHue">
+        <rdfs:subClassOf rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/SAN#Actuator"/>
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#ColorDimmableLight"/>
+        <rdfs:comment xml:lang="en">Phillips Hue lamp</rdfs:comment>
+        <rdfs:label xml:lang="en">Phillips Hue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Plug -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Plug">
+        <rdfs:subClassOf rdf:resource="http://www.irit.fr/recherches/MELODI/ontologies/SAN#Actuator"/>
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#PowerDelivery"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Pluviometry -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Pluviometry">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Presence -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Presence">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+        <rdfs:comment xml:lang="en">Property specifying wether a user is present or not in the feature of interest</rdfs:comment>
+        <rdfs:label xml:lang="en">Presence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Pyranometer -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Pyranometer">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#WeatherSensor"/>
+        <rdfs:comment xml:lang="en">Sensor measuring the luminous flux through a surface.</rdfs:comment>
+        <rdfs:label xml:lang="en">Pyranometer</rdfs:label>
+        <rdfs:label xml:lang="fr">Pyranomètre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Pyranometry -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Pyranometry">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+        <rdfs:label xml:lang="en">Pyranometry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#RainGauge -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#RainGauge">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#WeatherSensor"/>
+        <rdfs:comment xml:lang="en">Sensor measuring the quantity of fallen rain</rdfs:comment>
+        <rdfs:label xml:lang="fr">Pluviomètre</rdfs:label>
+        <rdfs:label xml:lang="en">Rain gauge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Rain_Gauge -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Rain_Gauge"/>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#SMA -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#SMA">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#Inverter"/>
+        <rdfs:comment xml:lang="en">A type of inverter</rdfs:comment>
+        <rdfs:label xml:lang="en">SMA</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Solivia -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Solivia">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#Inverter"/>
+        <rdfs:comment xml:lang="en">A type of inverter</rdfs:comment>
+        <rdfs:label xml:lang="en">Solivia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Sunlight_sensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Sunlight_sensor">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#LightSensor"/>
+        <rdfs:label xml:lang="en">Sunlight sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Temperature -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Temperature">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+        <rdfs:label xml:lang="en">Temperature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#UnitOfMeasure -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#UnitOfMeasure">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty"/>
+        <rdfs:comment>One of the unit the sensor can produce observations in</rdfs:comment>
+        <rdfs:label>Unit of measure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Valve -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Valve">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Actuator"/>
+        <rdfs:comment xml:lang="en">An actuator aiming at controlling the flow of a fluid (liquid or gaz) in a pipe.</rdfs:comment>
+        <rdfs:label xml:lang="en">Valve</rdfs:label>
+        <rdfs:label xml:lang="fr">Valve</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Weather -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Weather">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#OutdoorElement"/>
+        <rdfs:comment xml:lang="en">Collection of meteorological phenomena</rdfs:comment>
+        <rdfs:label xml:lang="en">Weather</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#WeatherSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#WeatherSensor">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Sensor"/>
+        <rdfs:comment xml:lang="en">Sensor measuring an outside weather feature</rdfs:comment>
+        <rdfs:label xml:lang="fr">Capteur météo</rdfs:label>
+        <rdfs:label xml:lang="en">Weather sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Weathercock -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Weathercock">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#WeatherSensor"/>
+        <rdfs:comment xml:lang="en">Sensor measuring the direction of the wind</rdfs:comment>
+        <rdfs:label xml:lang="fr">Girouette</rdfs:label>
+        <rdfs:label xml:lang="en">Weathercock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Weight -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#Weight">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+        <rdfs:label xml:lang="en">Weight</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#WeightSensor -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#WeightSensor">
+        <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#WindDirection -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#WindDirection">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+        <rdfs:label xml:lang="en">Wind direction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#WindSpeed -->
+
+    <owl:Class rdf:about="https://w3id.org/laas-iot/adream#WindSpeed">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+        <rdfs:label xml:lang="en">Wind speed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.irit.fr/recherches/MELODI/ontologies/IoT-O#IoT_Thing -->
+
+    <owl:Class rdf:about="https://www.irit.fr/recherches/MELODI/ontologies/IoT-O#IoT_Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream">
+        <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#A -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#A">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#MeasurementUnit"/>
+        <rdfs:label>A</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAM -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAM">
+        <rdf:type rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Building"/>
+        <rdfs:comment xml:lang="en">ADREAM is an energy optimized building, conceived as a living lab.</rdfs:comment>
+        <rdfs:label xml:lang="en">ADREAM building</rdfs:label>
+        <rdfs:label xml:lang="en">Georges Girault building</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMAthmosphericPressure -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAMAthmosphericPressure">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#AthmosphericPressure"/>
+        <rdfs:label xml:lang="en">Adream athmospheric pressure</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMEnergySubsystem -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAMEnergySubsystem">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#ADREAMSubSystem"/>
+        <rdfs:comment>Set of devices devoted to the metering of applicances consumption.</rdfs:comment>
+        <rdfs:label>ADREAM energy subsystem</rdfs:label>
+        <rdfs:label>elec</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMHygrometry -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAMHygrometry">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Hygrometry"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMWeather"/>
+        <rdfs:label xml:lang="en">ADREAM hygrometry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMLightSubsystem -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAMLightSubsystem">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#ADREAMSubSystem"/>
+        <rdfs:comment>Set of devices devoted to the management and measuring luminosity and energy consumed for light production.</rdfs:comment>
+        <rdfs:label>ADREAM light subsystem</rdfs:label>
+        <rdfs:label>lumin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMOutsideTemperature -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAMOutsideTemperature">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Temperature"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMWeather"/>
+        <rdfs:label xml:lang="en">ADREAM outside temperature</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMPhotovoltaicSubsystem -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAMPhotovoltaicSubsystem">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#ADREAMSubSystem"/>
+        <rdfs:comment>Set of devices devoted to metering the energy produced by the solar panels of the building</rdfs:comment>
+        <rdfs:label>ADREAM photovoltaic subsystem</rdfs:label>
+        <rdfs:label>photov</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMPluviometry -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAMPluviometry">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Pluviometry"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMWeather"/>
+        <rdfs:label xml:lang="en">ADREAM pluviometry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMPyranometry -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAMPyranometry">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Pyranometry"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMWeather"/>
+        <rdfs:label xml:lang="en">ADREAM pyranometry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMTemperatureSubsystem -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAMTemperatureSubsystem">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#ADREAMSubSystem"/>
+        <rdfs:comment>Devices related to the measure and regulation of the temperature in the building.</rdfs:comment>
+        <rdfs:label>ADREAM temperature subsystem</rdfs:label>
+        <rdfs:label>cvc</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMWeather -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAMWeather">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Weather"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMWeather"/>
+        <rdfs:comment xml:lang="en">Weather around the ADREAM building</rdfs:comment>
+        <rdfs:label xml:lang="en">ADREAM Weather</rdfs:label>
+        <rdfs:label xml:lang="en">ADREAM weather</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMWindDirection -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAMWindDirection">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#WindDirection"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMWeather"/>
+        <rdfs:label xml:lang="en">ADREAM wind direction</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#ADREAMWindSpeed -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ADREAMWindSpeed">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#WindSpeed"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ADREAMWeather"/>
+        <rdfs:label xml:lang="en">ADREAM wind speed</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/laas-iot/adream#Apartment -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#Apartment">
+        <rdf:type rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Room"/>
+        <rdfs:label xml:lang="en">Apartment</rdfs:label>
+        <rdfs:comment xml:lang="en">Experimental modular apartment hosted within the ADREAM building, used for experimentations including human, robots and connected devices.</rdfs:comment>
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ApartmentLivingRoom">
+        <rdf:type rdf:resource="http://elite.polito.it/ontologies/dogont.owl#LivingRoom"/>
+        <rdfs:comment xml:lang="en">Apartment's living room</rdfs:comment>
+        <rdfs:label xml:lang="en">Living room</rdfs:label>
+        <opa:hasIndoorLocation rdf:resource="https://w3id.org/laas-iot/adream#Apartment"/>
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest"/>
+        <ssn:hasProperty rdf:resource="https://w3id.org/laas-iot/adream#LivingRoomHygrometry"/>
+        <ssn:hasProperty rdf:resource="https://w3id.org/laas-iot/adream#LivingRoomLuminosity"/>
+        <ssn:hasProperty rdf:resource="https://w3id.org/laas-iot/adream#LivingRoomPresence"/>
+        <ssn:hasProperty rdf:resource="https://w3id.org/laas-iot/adream#LivingRoomTemperature"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#ApartmentBedroom">
+        <rdf:type rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Bedroom"/>
+        <rdfs:comment xml:lang="en">Apartment's bedroom</rdfs:comment>
+        <rdfs:label xml:lang="en">Bedroom</rdfs:label>
+        <opa:hasIndoorLocation rdf:resource="https://w3id.org/laas-iot/adream#Apartment"/>
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest"/>
+        <ssn:hasProperty rdf:resource="https://w3id.org/laas-iot/adream#BedroomHygrometry"/>
+        <ssn:hasProperty rdf:resource="https://w3id.org/laas-iot/adream#BedroomLuminosity"/>
+        <ssn:hasProperty rdf:resource="https://w3id.org/laas-iot/adream#BedroomPresence"/>
+        <ssn:hasProperty rdf:resource="https://w3id.org/laas-iot/adream#BedroomTemperature"/>
+    </owl:NamedIndividual>
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#LivingRoomHygrometry">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Hygrometry"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ApartmentLivingRoom"/>
+        <rdfs:comment xml:lang="en">Apartment's living room hygrometry</rdfs:comment>
+        <rdfs:label xml:lang="en">Living room hygrometry</rdfs:label>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#BedroomHygrometry">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Hygrometry"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ApartmentBedroom"/>
+        <rdfs:comment xml:lang="en">Apartment's bedroom hygrometry</rdfs:comment>
+        <rdfs:label xml:lang="en">Bedroom hygrometry</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#LivingRoomLuminosity">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Luminosity"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ApartmentLivingRoom"/>
+        <rdfs:comment xml:lang="en">Apartment's living room luminosity</rdfs:comment>
+        <rdfs:label xml:lang="en">Living room luminosity</rdfs:label>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#BedroomLuminosity">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Luminosity"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ApartmentBedroom"/>
+        <rdfs:comment xml:lang="en">Apartment's bedroom luminosity</rdfs:comment>
+        <rdfs:label xml:lang="en">Bedroom luminosity</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#LivingRoomPresence">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Presence"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ApartmentLivingRoom"/>
+        <rdfs:comment xml:lang="en">Apartment's living room presence</rdfs:comment>
+        <rdfs:label xml:lang="en">Living room presence</rdfs:label>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#BedroomPresence">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Presence"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ApartmentBedroom"/>
+        <rdfs:comment xml:lang="en">Apartment's bedroom presence</rdfs:comment>
+        <rdfs:label xml:lang="en">Bedroom presence</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#LivingRoomTemperature">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Temperature"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ApartmentLivingRoom"/>
+        <rdfs:comment xml:lang="en">Apartment's living room temperature</rdfs:comment>
+        <rdfs:label xml:lang="en">Living room temperature</rdfs:label>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#BedroomTemperature">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Temperature"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#ApartmentBedroom"/>
+        <rdfs:comment xml:lang="en">Apartment's bedroom temperature</rdfs:comment>
+        <rdfs:label xml:lang="en">Bedroom temperature</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#Gallery">
+        <rdf:type rdf:resource="http://elite.polito.it/ontologies/dogont.owl#Room"/>
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest"/>
+        <ssn:hasProperty rdf:resource="https://w3id.org/laas-iot/adream#GalleryTemperature"/>
+        <rdfs:comment xml:lang="fr">Windowed corridor covered with solar panels at the south of the building.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Gallerie</rdfs:label>
+        <rdfs:label xml:lang="en">Gallery</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/laas-iot/adream#GalleryTemperature">
+        <rdf:type rdf:resource="https://w3id.org/laas-iot/adream#Temperature"/>
+        <ssn:isPropertyOf rdf:resource="https://w3id.org/laas-iot/adream#Gallery"/>
+        <rdfs:comment xml:lang="en">Temperature measured in the solar pannels gallery, at different heights.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gallery temperature</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
