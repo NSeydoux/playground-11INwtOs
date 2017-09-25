@@ -1,2 +1,2 @@
-mvn compile 2> /dev/null
-mvn exec:java -Dconfig=config.json -Dexec.classpathScope=compile
+mvn -q compile
+mvn -q exec:java -Dconfig=config.json -Dexec.classpathScope=compile
