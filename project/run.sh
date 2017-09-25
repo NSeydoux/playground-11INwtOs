@@ -1,4 +1,4 @@
-echo "TECHIO> open --port 8080"
+echo "TECHIO> open --port 8080 /project/viewer.html"
 cd /mooc/in
 sh start.sh &
 cd /project/target
