@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" strict="true" name="XMLConfigTest" packages="org.apache.logging.log4j.test">
+    <Properties>
+        <Property name="filename">benchmark.log</Property>
+    </Properties>
+    <Filter type="ThresholdFilter" level="trace"/>
+
+    <Appenders>
+      <Appender type="Console" name="STDOUT">
+          <Layout type="PatternLayout" pattern="%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n"/>
+          <Filters>
+              <Filter type="MarkerFilter" marker="FLOW" onMatch="DENY" onMismatch="NEUTRAL"/>
+              <Filter type="MarkerFilter" marker="EXCEPTION" onMatch="DENY" onMismatch="ACCEPT"/>
+          </Filters>
+      </Appender>
+      <Appender type="Console" name="FLOW">
+          <Layout type="PatternLayout" pattern="%C{1}.%M %m %ex%n"/>
+          <!-- class and line number -->
+          <Filters>
+              <Filter type="MarkerFilter" marker="FLOW" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+              <Filter type="MarkerFilter" marker="EXCEPTION" onMatch="ACCEPT" onMismatch="DENY"/>
+          </Filters>
+      </Appender>
+      <Appender type="File" name="LogFile" fileName="${filename}">
+          <Layout type="PatternLayout">
+              <Pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</Pattern>
+          </Layout>
+      </Appender>
+     
+    </Appenders>
+  <Loggers>
+    <Logger name="org.apache.jena" level="info" additivity="true">
+      <AppenderRef ref="STDOUT"/>
+    </Logger>
+    <!-- http lib used by jena -->
+    <Logger name="org.apache.commons" level="info" additivity="true">
+      <AppenderRef ref="STDOUT"/>
+    </Logger>
+    <Root level="all">
+      <AppenderRef ref="STDOUT"/>
+    </Root>
+  </Loggers>
+</Configuration>

@@ -1,0 +1,8 @@
+{
+	"name":"in-mooc",
+	"instanceIP":"localhost",
+	"instanceURL":"http://localhost:8080/~/",
+	"cseId":"in-cse/",
+	"cseName":"in-name/",
+	"notificationPort":9555
+}

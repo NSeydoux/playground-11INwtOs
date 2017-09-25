@@ -1,0 +1,8 @@
+PREFIX san: <http://www.irit.fr/recherches/MELODI/ontologies/SAN#>
+PREFIX ssn: <http://www.purl.oclc.org/NET/ssnx/ssn#>
+PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+
+SELECT ?hue
+WHERE {
+	<{{ actuationURI }}> san:actuationResults/ssn:hasValue/dul:hasDataValue ?hue.
+}

@@ -1,0 +1,6 @@
+{
+	"uri":"http://127.0.0.1",
+	"port":5678, 
+	"server":"127.0.0.1:6789",
+	"fusekiEndpoint":"http://localhost:3030/swip-adream"
+}

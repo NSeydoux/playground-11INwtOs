@@ -1,8 +1,8 @@
-title : Java Maven Project
+title : OM2M MOOC playground
 
 # Table of content
 plan:
-  - title: Welcome # Set the page title (only displayed if your contribution has several pages)
+  - title: Hello world # Set the page title (only displayed if your contribution has several pages)
     statement: markdowns/welcome.md # Set the file path to the page content
 #  - title: Another Page
 #    statement: markdowns/another-page.md
@@ -11,9 +11,9 @@ plan:
 # Settings for your programming projects and the associated Docker images
 projects:
   java:
-    root: /java-project # Set the root path to your Java project
+    root: /project # Set the root path to your Java project
 
     # Set the docker image. This image runs JUnit tests using this syntax:
     # @[Code Editor Title]({"stubs": ["EditorFile1.java", "EditorFile2.java", ...], "command": "MyJUnitClass#myMethod"})
     # More details here: https://github.com/TechDotIO/java-maven3-junit4-runner
-    runner: techio/java-maven3-junit4-runner:1.1.3-java-8
+    runner: nseydoux/mooc_om2m:semantics

@@ -1,0 +1,25 @@
+PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>
+PREFIX ssn:<http://purl.oclc.org/NET/ssnx/ssn#>
+PREFIX san:<http://www.irit.fr/recherches/MELODI/ontologies/SAN#>
+PREFIX ioto:<http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#>
+PREFIX time:<http://www.w3.org/2006/time#>
+PREFIX rdfs:<http://www.w3c.org/2000/01/rdf-schema#>
+PREFIX dul:<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+
+INSERT DATA {
+	# The observation
+	<{{ obsURI }}> a ssn:Observation;
+		ssn:observationResult <{{ sensorOutputURI }}>;
+		ssn:observedBy <{{ sensorURI }}>;
+		san:hasDateTime <{{ instantURI }}>.
+	# The sensor output
+	<{{ sensorOutputURI }}> a ssn:SensorOutput;
+		ssn:hasValue <{{ obsValURI }}>.
+	# The observation value
+	<{{ obsValURI }}> a ssn:ObservationValue;
+		dul:hasDataValue "{{ value }}"^^xsd:float.
+	# The instant
+	<{{ instantURI }}> a time:Instant;
+ 		rdfs:label "{{ lblTimestamp }}";
+		ioto:hasTimeStamp "{{ xsdTimestamp }}"^^xsd:timestamp.
+}
